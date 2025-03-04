@@ -28,11 +28,17 @@ export const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
-            {["Home", "Design", "About"].map((item, index) => (
+            {["Home", "Designs", "About"].map((item, index) => (
               <Link
                 key={index}
                 className="relative font-medium text-primary-dark hover:text-secondary transition-colors duration-300 group"
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                href={
+                  item === "Home"
+                    ? "/"
+                    : item === "Designs"
+                      ? "/pages/designs"
+                      : `/${item.toLowerCase()}`
+                }
               >
                 {item}
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full" />
