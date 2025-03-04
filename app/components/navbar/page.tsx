@@ -6,8 +6,8 @@ import menu from "@/public/icons8-menu (1).svg";
 
 export const Navbar = () => {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-4 py-4 font-sm">
-      <nav className="mx-auto max-w-7xl">
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 py-8 font-sm">
+      <nav className="mx-auto max-w-8xl px-48">
         <div className="backdrop-blur-md bg-background-DEFAULT/60 rounded-2xl px-6 py-4 flex items-center justify-between shadow-lg border border-secondary-light/10 hover:border-secondary-light/20 transition-all duration-300">
           {/* Logo Section */}
           <div className="flex items-center gap-2">

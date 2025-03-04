@@ -28,7 +28,7 @@ export const LandingPage = () => {
         <div className="absolute bottom-[-10%] left-[30%] w-[600px] h-[600px] rounded-full bg-primary/20 blur-[130px] animate-pulse delay-2000" />
       </div>
 
-      <div className="w-full h-full rounded-3xl flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-sm">
+      <div className="w-full h-full rounded-3xl flex flex-col items-center justify-center relative overflow-hidden">
         <div className="flex flex-col items-center justify-center flex-1 w-full relative z-10">
           <div className="flex items-center justify-center gap-4 rounded-full px-6 py-3 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
             {render5Star()}

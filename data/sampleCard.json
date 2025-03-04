@@ -1,8 +1,17 @@
 {
   "id": 1,
   "title": "Transform Your Vision",
+  "subTitle": "Into Reality",
+  "Image": "../public/bg.jpeg",
   "links": {
-    "hireTopTalent": "/designers",
-    "exploreServices": "/services"
+    "github": "/designers",
+    "screenshot": {
+      "src": "/bg.jpeg",
+      "alt": "Transform Your Vision Into Reality"
+    },
+    "liveDemo": {
+      "src": "/bg.jpeg",
+      "alt": "Transform Your Vision Into Reality"
+    }
   }
 }

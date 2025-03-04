@@ -4,10 +4,9 @@ export const Design = () => {
   return (
     <div
       className="w-full min-h-screen flex flex-col md:flex-col bg-white 
-    font-system px-48"
+    font-system "
     >
       <Header />
-
       <Card />
     </div>
   );
