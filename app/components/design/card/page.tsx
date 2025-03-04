@@ -6,6 +6,8 @@ import select from "@/public/select-icon.png";
 import share from "@/public/share.png";
 import Link from "next/link";
 import Dropdown from "./dropdown/page";
+import { FaHeart, FaRegComment } from "react-icons/fa";
+import { MdAccessTime } from "react-icons/md";
 
 export const Card = () => {
   const [toggle, setToggle] = useState(false);
@@ -29,25 +31,44 @@ export const Card = () => {
       description: "Card view credit card system with different features",
       logoUrl: samplecard,
     },
+    {
+      id: 3,
+      name: "Card View Credit Card",
+      description: "Card view credit card system with different features",
+      logoUrl: samplecard,
+    },
+    {
+      id: 4,
+      name: "Card View Credit Card",
+      description: "Card view credit card system with different features",
+      logoUrl: samplecard,
+    },
   ];
 
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-2 py-4 font-sm px-8 space-x-4">
+    <div className="w-full grid grid-cols-2 md:grid-cols-2 py-4 font-sm px-8 gap-4 ">
       {cards.map((input) => (
         <div
           key={input.id}
           className="p-4 flex flex-col bg-[#1E201E] rounded-xl"
         >
-          <div className="flex justify-between pt-2 pb-1">
-            <div className="flex items-center space-x-2">
+          <div className="flex justify-between pt-2 pb-1 items-center ">
+            <div className="flex space-x-2">
               <div className="bg-white h-[40px] w-[40px] rounded-full" />
-              <h1 className="text-base text-white py-2">@UserUmuotots</h1>
+              <Link href={""}>
+                <h1 className="text-base text-white py-2 hover:text-blue-500">
+                  @UserUmuotots
+                </h1>
+              </Link>
             </div>
-            <p className="text-sm text-white">2 days ago || 3 comments</p>
+            <p className="text-sm text-white">
+              2 Days ago | 3 Comments | 5 Likes
+            </p>
           </div>
           <div className="py-2 space-y-1">
-            <h1 className="text-xl py-2 text-white font-bold">{input.name}</h1>
-            <p className="text-sm text-white">{input.description}</p>
+            <h1 className="text-xl py-2 text-white font-bold ">{input.name}</h1>
+
+            <p className="text-sm text-white pb-2">{input.description}</p>
           </div>
           <div className="flex items-center justify-center h-[420px] w-full rounded-xl">
             <Image

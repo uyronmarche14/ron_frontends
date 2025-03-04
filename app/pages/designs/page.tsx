@@ -1,5 +1,6 @@
 import Card from "@/app/components/design/card/page";
 import Header from "@/app/components/design/header/page";
+import Filter from "@/app/components/design/filter_search/page";
 export const Design = () => {
   return (
     <div
@@ -7,7 +8,7 @@ export const Design = () => {
     font-system px-48"
     >
       <Header />
-
+      <Filter />
       <Card />
     </div>
   );
