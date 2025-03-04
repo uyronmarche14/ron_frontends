@@ -1,17 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rowdies:wght@300;400;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Rubik+Mono+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #111827; /* Dark background */
+  --foreground: #f97316; /* Vibrant Orange */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground: #ededed;
+    --background: #ffffff; /* Keep dark background */
+    --foreground: #f97316; /* Keep orange */
   }
 }
 
@@ -21,5 +26,23 @@ body {
   font-family:
     Noto sans,
     Helvetica,
-    sans-serif;
+    Abril Fatface,
+    Kode Mono;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #f97316; /* Orange headers */
+  }
+  p {
+    color: #000000; /* Light text for readability */
+  }
+  .text-secondary {
+    color: #fb923c; /* Light orange for secondary text */
+  }
 }

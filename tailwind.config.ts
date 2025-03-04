@@ -8,10 +8,37 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        bd: ["Abril Fatface", "cursive"],
+        sm: ["Kode Mono", "sans-serif"],
+        system: ["poppins", "sans-serif"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        hoverPrimary: "text-blue-500 hover:text-blue-700",
+        primary: {
+          DEFAULT: "#C2410C", // Dark Orange
+          light: "#EA580C", // Medium-Dark Orange
+          dark: "#9A3412", // Deeper Orange
+        },
+        secondary: {
+          DEFAULT: "#F97316", // Vibrant Orange
+          light: "#FB923C", // Light Orange
+          dark: "#EA580C", // Deep Orange
+        },
+        accent: {
+          DEFAULT: "#FB923C", // Bright Orange
+          light: "#FED7AA", // Light Orange
+          dark: "#F97316", // Medium Orange
+        },
+        background: {
+          DEFAULT: "#FFFFFF", // Pure White
+          light: "#FAFAFA", // Subtle Off-White
+          dark: "#F8FAFC", // Very Light Gray
+        },
+        text: {
+          DEFAULT: "#1F2937", // Dark Gray
+          light: "#4B5563", // Medium Gray
+          dark: "#111827", // Almost Black
+        },
       },
     },
   },

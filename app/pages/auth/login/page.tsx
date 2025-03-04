@@ -1,26 +1,14 @@
 import React from "react";
 import Signin from "@/app/components/login/signin/page";
-import Bg from "@/app/components/login/bg_login/page";
-export const login = () => {
-  interface inputType {
-    id: number;
-    label: string;
-    input: string;
-  }
+import BgAuth from "@/app/components/login/bg_auth/page";
 
-  const inputType: inputType[] = [
-    { id: 1, label: "name", input: "" },
-    { id: 2, label: "email", input: "" },
-    { id: 3, label: "contact", input: "" },
-    { id: 4, label: "password", input: "" },
-  ];
-
+export const Login = () => {
   return (
-    <div className="w-[full] h-full flex flex-row ">
+    <div className="w-full min-h-screen flex flex-col md:flex-row bg-white font-system">
       <Signin />
-      <Bg />
+      <BgAuth isLoginPage={true} />
     </div>
   );
 };
 
-export default login;
+export default Login;

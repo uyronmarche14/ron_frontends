@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import star from "@/public/star.png";
-import award from "../../public/award.png";
-import CompaniesPage from "../../../public/rendering_imgs/companies/page";
 
 export const LandingPage = () => {
   const render5Star = () => {
@@ -13,9 +11,9 @@ export const LandingPage = () => {
             key={i}
             src={star}
             alt="rating"
-            width={25}
-            height={25}
-            className="object-contain"
+            width={16}
+            height={16}
+            className="object-contain hover:scale-110 transition-transform duration-200"
           />
         ))}
       </div>
@@ -23,43 +21,48 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-t from-sky-50 to-sky-300 w-full h-[100vh] gap-6 p-4 m-4 rounded-2xl flex flex-col items-center justify-center">
-      <div className="flex flex-row items-center justify-center rounded-3xl gap-4 h-[60px] w-[450px] p-2 m-4 bg-white">
-        {render5Star()}
-        <p className="text-black font-bold text-sm">
-          rater 5.5 fomm all over 500 stores
-        </p>
+    <div className="h-full w-full px-4  pb-8 relative">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-[-10%] left-[-20%] w-[500px] h-[500px] rounded-full bg-secondary/30 blur-[120px] animate-pulse" />
+        <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-accent/30 blur-[120px] animate-pulse delay-1000" />
+        <div className="absolute bottom-[-10%] left-[30%] w-[600px] h-[600px] rounded-full bg-primary/20 blur-[130px] animate-pulse delay-2000" />
       </div>
-      <div>
-        <h1 className="text-black text-7xl w-[1000px] text-center font-bold justify-center">
-          Find Top Designers to Bring Your Vision to Life
-        </h1>
 
-        <span></span>
-      </div>
-      <p className="text-black text-xl">
-        hire expert top talends desingers for websites, app, and more.
-      </p>
-      <div className="flex flex-row gap-4 pt-4">
-        <div className="flex flex-row items-center justify-center">
-          <span className="bg-black text-white h-[50px] w-[50px] flex items-center justify-center rounded-l-3xl">
-            &lt;
-          </span>
-          <button className="font-bold bg-black text-white h-[50px] w-[200px] flex items-center text-xl justify-start pl-4 rounded-r-3xl">
-            Hire Designer
-          </button>
-        </div>
+      <div className="w-full h-full rounded-3xl flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-sm">
+        <div className="flex flex-col items-center justify-center flex-1 w-full relative z-10">
+          <div className="flex items-center justify-center gap-4 rounded-full px-6 py-3 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+            {render5Star()}
+            <div className="flex items-center">
+              <span className="text-primary-dark font-medium text-sm">
+                Trusted by 500+ businesses
+              </span>
+            </div>
+          </div>
 
-        <button className="font-bold bg-white text-black text-xl h-[50px] w-[250px] rounded-3xl">
-          Explore Services
-        </button>
-      </div>
-      <div className="pt-40 flex flex-col gap-2">
-        <div className="flex items-center justify-center">
-          <p className="text-black font-bold text-2xl">Trusted by</p>
-        </div>
-        <div>
-          <CompaniesPage />
+          <div className="flex flex-col items-center gap-8 text-center max-w-4xl relative z-10 mt-12">
+            <div className="space-y-2">
+              <h1 className="text-4xl md:text-7xl font-bold text-primary-dark leading-tight tracking-tight drop-shadow-sm font-sm">
+                Transform Your Vision
+              </h1>
+              <h1 className="text-4xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-sm bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-size-200 animate-gradient font-sm">
+                Top Design Talent
+              </h1>
+            </div>
+
+            <p className="text-lg text-text-DEFAULT max-w-2xl leading-relaxed backdrop-blur-sm">
+              Connect with elite designers specialized in web, mobile, and brand
+              experiences. Curated professionals, verified excellence.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 w-full max-w-sm sm:max-w-none">
+              <button className="flex-1 bg-gradient-to-r from-secondary to-accent text-white text-lg font-semibold h-14 rounded-xl hover:shadow-lg hover:translate-y-[-2px] transition-all duration-300 ease-out backdrop-blur-sm">
+                Hire Top Talent
+              </button>
+              <button className="flex-1 bg-white/10 backdrop-blur-md text-primary-dark text-lg font-semibold h-14 rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 hover:shadow-md transition-all duration-300">
+                Explore Services
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

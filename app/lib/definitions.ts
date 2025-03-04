@@ -1,10 +1,6 @@
 import { z } from "zod";
 
 export const SignupFormSchema = z.object({
-  name: z
-    .string()
-    .min(2, { message: "Name must be at least 2 characters long." })
-    .trim(),
   email: z.string().email({ message: "Please enter a valid email." }).trim(),
   password: z
     .string()
@@ -15,14 +11,20 @@ export const SignupFormSchema = z.object({
       message: "Contain at least one special character.",
     })
     .trim(),
+  phone: z
+    .string()
+    .max(11, { message: "Phone number must be 11 characters long." })
+    .regex(/^[0-9]+$/, { message: "Phone number must contain only numbers." })
+    .regex(/^63/, { message: "Phone number must start at 63." })
+    .trim(),
 });
 
 export type FormState =
   | {
       errors?: {
-        name?: string[];
         email?: string[];
         password?: string[];
+        phone?: string[];
       };
       message?: string;
     }
