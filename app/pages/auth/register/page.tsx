@@ -1,6 +1,6 @@
 import React from "react";
-import Registration from "@/app/components/login/register/page";
-import BgAuth from "@/app/components/login/bg_auth/page";
+import Registration from "@/app/components/login/registration/page";
+import BgAuth from "@/app/components/login/bg/page";
 
 export const RegistrationPage = () => {
   return (

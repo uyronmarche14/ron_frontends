@@ -1,15 +1,5 @@
 import { SignupFormSchema, FormState } from "@/app/lib/definitions";
 
-interface SignupResponse {
-  success: boolean;
-  message: string;
-  errors?: Record<string, string[]>;
-  data?: {
-    userId: string;
-    email: string;
-  };
-}
-
 export async function signup(state: FormState, formData: FormData) {
   // Validate form fields
   try {

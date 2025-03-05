@@ -3,20 +3,16 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { signup } from "@/app/actions/auth";
+import { useRouter } from "next/navigation";
 import google from "@/public/icons8-google-96.png";
 import github from "@/public/icons8-github-96.png";
 import linkedin from "@/public/icons8-linkedin-96.png";
 
 export const Registration = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [successMessage, setSuccessMessage] = useState<string>("");
-
-  interface FormErrors {
-    email?: string[];
-    password?: string[];
-    phone?: string[];
-  }
 
   const inputFields = [
     { id: 1, label: "email", type: "email", placeholder: "Email" },
@@ -57,20 +53,20 @@ export const Registration = () => {
     setSuccessMessage("");
 
     try {
-      const formData = new formData(e.currentTarget);
+      const formData = new FormData(e.currentTarget);
       const respone = await signup(formData);
 
       if (respone.success) {
         setSuccessMessage(respone.message);
         setTimeout(() => {
-          window.location.href = "/";
+          router.push("/pages/auth/login");
         }, 2000);
       } else {
         setErrors(respone.errors || {});
       }
     } catch (error) {
       setErrors({
-        email: ["HAAHAHAHAHA"],
+        general: ["HAAHAHAHAHA"],
       });
     } finally {
       setIsLoading(false);
@@ -96,27 +92,31 @@ export const Registration = () => {
                 {successMessage}
               </div>
             )}
-          </form>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
             {inputFields.map((input) => (
               <div key={input.id}>
                 <input
                   type={input.type}
                   name={input.label}
                   placeholder={input.placeholder}
-                  value={formValues[input.label as keyof typeof formValues]}
-                  onChange={handleInputChange}
                   className="w-full h-[50px] border rounded-lg px-4 text-primary bg-white/50 border-primary-light hover:border-secondary focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-colors"
                 />
+                {errors[input.label] && (
+                  <p className="text-red-500 text-xs italic">
+                    {errors[input.label]?.[0]}
+                  </p>
+                )}
               </div>
             ))}
 
             <button
               type="submit"
-              className="w-full h-[50px] bg-primary text-background-light rounded-lg font-semibold hover:bg-primary-dark transition-colors mt-6"
+              disabled={isLoading}
+              className={`w-full h-[50px] bg-primary text-background-light rounded-lg font-semibold hover:bg-primary-dark transition-colors mt-6 ${
+                isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
-              Create Account
+              {isLoading ? "Creating Account..." : "Create Account"}
             </button>
           </form>
 

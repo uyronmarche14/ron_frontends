@@ -1,6 +1,6 @@
 import React from "react";
 import Signin from "@/app/components/login/signin/page";
-import BgAuth from "@/app/components/login/bg_auth/page";
+import BgAuth from "@/app/components/login/bg/page";
 
 export const Login = () => {
   return (

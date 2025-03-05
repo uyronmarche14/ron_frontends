@@ -66,9 +66,7 @@ export const BgAuth: React.FC<BgAuthProps> = ({ isLoginPage = true }) => {
               ? "Don't have an account?"
               : "Already have an account?"}
             <Link
-              href={
-                isLoginPage ? "/pages/auth/registration" : "/pages/auth/login"
-              }
+              href={isLoginPage ? "/pages/auth/register" : "/pages/auth/login"}
               className="hover:text-secondary transition-colors font-bold px-1"
             >
               {isLoginPage ? "Create Now" : "Sign In"}
